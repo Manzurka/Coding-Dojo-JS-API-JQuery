@@ -1,0 +1,84 @@
+<html>
+    <head>
+         <meta charset="utf-8">
+         <title>Add User</title>
+         <script 
+            src="https://code.jquery.com/jquery-3.3.1.js" 
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" 
+            crossorigin="anonymous"></script>
+        <script>
+            $(document).ready(function(){
+                $('form').submit(function(){
+                    $('table').append('<tr><td></td><td></td><td></td><td></td></tr>');
+                    $('table tr:last td:first').html($('#first_name').val());
+                    $('table tr:last td:nth-child(2)').html($('#last_name').val());
+                    $('table tr:last td:nth-child(3)').html($('#email').val());
+                    $('table tr:last td:last').html($('#phone').val());
+                    $('input:not(#submit)').val("");
+                    return false;
+                });
+            })
+        </script>
+        <style>
+               *{
+                   margin:0px auto;
+                   width:1000px;
+                }
+                #second{
+                    position: relative;
+                    top:100px;
+                }
+                form{
+                    padding:30px;
+                }
+                input{
+                    display:block;
+                    text-align:center;
+                    width:150px;
+                    text-align:left;
+                }
+                input:last-child{
+                    margin:5px;
+                    text-align:center;
+                }
+                table{
+                    border: 5px solid black;
+                    padding: 10px;
+                    text-align:center;
+                }
+        </style>
+    </head>
+    <body>
+        <div id="first">
+                <table>
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email Address</th>
+                            <th>Contact#</th>
+                        </tr>
+                    
+                </table>
+        </div>
+                   
+        <div id="second">
+                <h1>Add User</h1>
+                <hr>
+                <form action="">
+                    First Name:
+                    <input id="first_name" type="text" name="first_name" placeholder="First name"/>
+                    
+                    Last Name:
+                    <input id="last_name" type="text" name="last_name" placeholder="Last name"/>
+                    
+                    Email address:
+                    <input id="email" type="text" name="email" placeholder="Email address"/>
+                    
+                    Contact#:
+                    <input id="phone" type="text" name="phone" placeholder="Phone number"/>
+                    
+                    <input id="submit" type="submit" value="Add User"/>
+                </form>
+        </div>
+    </body>
+</html>

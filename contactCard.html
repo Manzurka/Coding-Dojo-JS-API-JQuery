@@ -1,0 +1,105 @@
+<html>
+    <head>
+         <meta charset="utf-8">
+         <title>Contact Card</title>
+         <script 
+            src="https://code.jquery.com/jquery-3.3.1.js" 
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" 
+            crossorigin="anonymous"></script>
+        <script>
+            function for_p() {
+                $('div:not(first-child').children('p').css('font-size', '18px');
+                $('div:not(first-child').children('p').css('text-align', 'center');
+                $('div:not(first-child').children('p').css('vertical-align', 'middle');
+                $('div:not(first-child').children('p').css('width', '200px');
+            };
+            function for_button() {
+                $('div').children('button').css('width', '200px');
+                $('div').children('button').css('margin', '10px 100px 10px 100px');
+                $('div').children('button').css('background', 'pink');
+                $('div').children('button').css('color', 'white');
+            };
+            function for_div() {
+                $('.new').css('height', '100px');
+                $('.new').css('width', '400px');
+                $('.new').css('background', 'green');
+                $('.new').css('margin', '10px');
+            };
+            
+            $(document).ready(function(){
+                $('form').submit(function(){
+                    var a = $('#first_name').val();
+                    var b = $('#last_name').val();
+                    $('#right').append('<div class="new">'+'<p>'+a+" "+b+'</p>'+'<button>Click for Description!</button>'+'</div>');
+                    $('input:not(#submit)').val("");                
+                    for_p();
+                    for_button();
+                    for_div();
+                    return false;
+                });
+                $(document).on("click", "button", function(){
+                    var c=$('textarea').val();
+                    $(this).parent().html('<p>'+c+'</p>');
+                    for_p();
+                    $('textarea').val("");
+                });
+            });
+        </script>
+        <style>
+               *{
+                   margin:0px auto;
+                   width:1000px;
+                }
+                body{
+                    border:5px solid black;
+                }
+                #left{
+                    display:inline-block;
+                    vertical-align:top;
+                    width:300px;
+                }
+                #right{
+                    display:inline-block;
+                    vertical-align:top;
+                    margin:10px;
+                    margin-left:100px;
+                    width:250px;
+                }
+                form{
+                    padding:30px;
+                }
+                input{
+                    width:150px;
+                    text-align:left;
+                }
+                textarea{
+                    width:200px;
+                    height:100px;
+                }
+                input:last-child{
+                    margin:5px;
+                    text-align:center;
+                    background:green;
+                    color:white;
+                }
+        </style>
+    </head>
+    <body>
+        <div id="left">
+                <form action="">
+                    <h4>First Name:</h4>
+                    <input id="first_name" type="text" name="first_name" placeholder="First name"/>
+                    <br>
+                    <h4>Last Name:</h4>
+                    <input id="last_name" type="text" name="last_name" placeholder="Last name"/>
+                    <br>
+                    <h4>Description:</h4>
+                    <textarea id="description" type="text" name="description" placeholder="Enter Description"/></textarea>
+                     <br>               
+                    <input id="submit" type="submit"/>
+                </form>
+        </div>
+        <div id="right">
+        </div>
+    </body>
+</html>

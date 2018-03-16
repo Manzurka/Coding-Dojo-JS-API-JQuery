@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <meta charset="utf-8">
+         <title>Hover In and Out</title>
+         <meta name="description" content="This is the registration form to gather data about potential students interesed in programming languages!" >
+         <script src="https://code.jquery.com/jquery-3.3.1.js" 
+         integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" 
+         crossorigin="anonymous"></script>
+        <script> 
+        $(document).ready(function() {
+            $('img').hover(function() {
+                    var model2 = $(this).data('alt-src');
+                    $(this).data('alt-src', $(this).attr('src')); 
+                    $(this).attr('src', model2);
+            });
+        });
+        </script>
+        <style>
+            body{
+                width:1000px;
+            }
+            div {
+                display:inline-block;
+                vertical-align: top;
+                width:200px;
+                /* border:2px solid black; */
+                margin:10px;
+            }
+            img{
+                width:180px;
+            }
+         
+        </style>
+    </head>
+    
+    <body>
+        <h1>Summer dress</h1>
+        <div>
+            <img src="model1.png" data-alt-src='model2.png'/>
+        </div>
+        <div>
+            <img src="model1.png" data-alt-src='model2.png'/>
+        </div>
+        <div>
+            <img src="model1.png" data-alt-src='model2.png'/>
+        </div>
+        <div>
+            <img src="model1.png" data-alt-src='model2.png'/>
+        </div>
+        <div>
+            <img src="model1.png" data-alt-src='model2.png'/>
+        </div>
+        <div>
+            <img src="model1.png" data-alt-src='model2.png'/>
+        </div>
+        <div>
+            <img src="model1.png" data-alt-src='model2.png'/>
+        </div>
+        <div>
+            <img src="model1.png" data-alt-src='model2.png'/>
+        </div>
+        
+    </body>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <meta charset="utf-8">
+         <title>NinjaCat</title>
+         <meta name="description" content="This is the registration form to gather data about potential students interesed in programming languages!" >
+         <script 
+            src="https://code.jquery.com/jquery-3.3.1.js" 
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" 
+            crossorigin="anonymous"></script>
+        <script> 
+        $(document).ready(function() {
+            $('img').click(function() {
+                    var catimage = $(this).data('alt-src');
+                    $(this).data('alt-src', $(this).attr('src')); 
+                    $(this).attr('src', catimage);
+            });
+        });
+        </script>
+        <style>
+            img{
+                display:block;
+                width:250px;
+            }
+        </style>
+    </head>
+        <body>
+            <img id="one" src='ninja1.png' data-alt-src='cat1.png'/>
+            <img id="two" src='ninja2.png' data-alt-src='cat2.png'/>
+            <img id="three" src='ninja3.png' data-alt-src='cat3.png'/>
+            <img id="four"src='ninja4.png' data-alt-src='cat4.png'/>
+            
+        </body>

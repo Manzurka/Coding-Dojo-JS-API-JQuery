@@ -1,0 +1,36 @@
+<html>
+    <head>
+         <meta charset="utf-8">
+         <title>Contact Card</title>
+         <script 
+            src="https://code.jquery.com/jquery-3.3.1.js" 
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" 
+            crossorigin="anonymous"></script>
+        <script>
+            $(document).ready(function(){
+                $(document).on("click", "button", function(){
+                    var c = 
+                    console.log(c);
+
+                    var html_str=`<div><p>${$('<h4>').text()}</p></div>`;
+                    $('#right').append(html_str);
+                })
+                });
+        </script>
+            </head>
+    <body>
+        <div id="left">
+                <form action="">
+                    <h4>First Name:</h4>
+                    <input id="first_name" type="text" name="first_name" placeholder="First name"/>
+                    <br>
+                    <h4>Last Name:</h4>
+                    <input id="last_name" type="text" name="last_name" placeholder="Last name"/>
+                    <br>              
+                    <button>Click</button>
+                </form>
+        </div>
+        <div id="right">
+        </div>
+    </body>
+</html>
